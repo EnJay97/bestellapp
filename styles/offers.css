@@ -1,0 +1,35 @@
+
+.atf{
+}
+
+.top_img{
+    
+}
+
+.top_img img{
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    width: calc(100% - 300px);
+}
+
+.shopping_cart{
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    flex-grow: 1;
+}
+
+.basket{
+    position: sticky;
+    top: 0;
+}
