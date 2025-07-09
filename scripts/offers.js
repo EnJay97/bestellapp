@@ -66,6 +66,36 @@ let offers = [
       "type": "Pizza"
     },
     {
+      "name": "Not Hamburger",
+      "description": "Pflanzenpatty, veganer Scheibenkäse, Salat, Tomate, Gurke und veganer Mayo",
+      "price": 9.50,
+      "type": "Burger"
+    },
+    {
+      "name": "BBQ Jackfruit Burger",
+      "description": "Jackfruit in BBQ-Sauce, veganer Scheibenkäse, Cole Slaw und Röstzwiebeln",
+      "price": 10.50,
+      "type": "Burger"
+    },
+    {
+      "name": "Spicy Chickpea Burger",
+      "description": "Kichererbsenpatty, veganer Scheibenkäse, Jalapeños und Chili-Sauce",
+      "price": 9.90,
+      "type": "Burger"
+    },
+    {
+      "name": "Avocado Mushroom Burger",
+      "description": "Gegrillter Riesenchampignon, veganer Scheibenkäse, Avocado und vegane Aioli",
+      "price": 9.20,
+      "type": "Burger"
+    },
+    {
+      "name": "No Chicken Burger",
+      "description": "Knuspriges veganes Hähnchenpatty, veganer Scheibenkäse, Salat, Tomate, vegane Ranch-Soße",
+      "price": 10.30,
+      "type": "Burger"
+    },
+    {
       "name": "Spaghetti Pomodoro",
       "description": "Spaghetti mit Tomatensauce und frischem Basilikum",
       "price": 7.50,
