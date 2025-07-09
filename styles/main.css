@@ -15,7 +15,7 @@ html {
 
 body {
     margin: 0;
-    color: #dde0e0;
+    color: #f7f7f7;
     background-color: #fddab5;
     font-family: "Sour_Gummy";
 }
@@ -40,7 +40,7 @@ footer a{
     justify-content: center;
     padding-top: 4px;
     text-decoration: none;
-    color: #dde0e0;
+    color: #f7f7f7;
 }
 
 footer{
