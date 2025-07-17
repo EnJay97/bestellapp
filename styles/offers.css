@@ -30,6 +30,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding-left: 8px;
+    height: 1000px;
 }
 
 .left{
@@ -44,22 +45,17 @@
     flex-grow: 1;
 }
 
-.basket{
-    position: sticky;
-    top: 0;
-    background-color: #f7f7f7;
-    height: 100%;
-    border: 1px solid black;
-    box-shadow: -1px 0px 10px 0px black;
-}
-
-.basket h3, .basket p{
+.shopping_cart h3, .shopping_cart p{
     margin: 2px;
 }
 
 .shopping_cart{
     width: 290px;
     margin-right: 8px;
+    background-color: #f7f7f7;
+    height: 100%;
+    border: 1px solid black;
+    box-shadow: -1px 0px 10px 0px black;
 }
 
 .basket_content{
