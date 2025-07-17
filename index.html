@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="styles/offers.css">
 
 </head>
-<body>
+<body onload="init()">
 
     <header>
         <h1>Your vegan Foodstore</h1>
@@ -32,20 +32,7 @@
             <a href="Desserts">Desserts</a>
             <a href="#menu">Getränke</a>
         </nav>
-        <div class="content">
-            <div class="left">
-                <h2>"Type-Platzhalter"</h2>
-                <div id="menu" class="menu">
-                    <div id="name">
-                        <h3>Name</h3>
-                        <p>description</p>
-                        <p class="price">price</p> 
-                    </div>
-                    <div id="plus" class="add">
-                        <p>+</p>
-                    </div>
-                </div>               
-            </div>
+        <div id="renderContent" class="content">
             <div class="right">
                 <div class="shopping_cart">
                     <h3>Dein Warenkorb</h3>

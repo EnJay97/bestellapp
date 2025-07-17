@@ -1,7 +1,7 @@
 let offers = [
     {
       "name": "Gemischter Salat",
-      "description": "Blattsalat, Tomaten, Gurken, Paprika, Karotten, Balsamico-Dressing",
+      "description": "Eisbergsalat, Tomaten, Gurken, Paprika, Karotten, Balsamico-Dressing",
       "price": 4.50,
       "type": "Salat"
     },
@@ -31,7 +31,7 @@ let offers = [
     },
     {
       "name": "Avocado-Salat",
-      "description": "Blattsalat, Avocado, Cherry-Tomaten, Gurke, Limetten-Dressing",
+      "description": "Eisbergsalat, Avocado, Cherry-Tomaten, Gurke, Limetten-Dressing",
       "price": 6.90,
       "type": "Salat"
     },
@@ -191,4 +191,4 @@ let offers = [
       "price": 2.60,
       "type": "Getränk"
     }
-]
+];
