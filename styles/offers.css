@@ -62,6 +62,11 @@
     margin-right: 8px;
 }
 
+.basket_content{
+    display: flex;
+    justify-content: space-between;
+}
+
 .menu{
     background-color: #f7f7f7;
     display: flex;
