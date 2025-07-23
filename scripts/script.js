@@ -12,7 +12,7 @@ function init(){
 function renderContent(){
     let contentRef = document.getElementById("renderContent");
     contentRef.innerHTML = "";
-    contentRef.innerHTML += `<div id="left${i}" class="left">
+    contentRef.innerHTML += `<div id="left" class="left">
                             </div>
                             <div class="right">
                                 <div class="shopping_cart">
@@ -27,7 +27,7 @@ function renderContent(){
 };
 
 function renderOffers(){
-    let offersRef = document.getElementById(`left${i}`);
+    let offersRef = document.getElementById(`left`);
 
     for (let i = 0; i < offers.length; i++) {
         offersRef.innerHTML += `<h2>${offers[i].type}</h2>`
@@ -36,24 +36,23 @@ function renderOffers(){
 };
 
 function renderSingleMenu(i){
-    let singleMenuRef = document.getElementById(`left${i}`);
+    let singleMenuRef = document.getElementById(`left`);
     let info = offers[i].info;
 
     for (let j = 0; j < info.length; j++) {
-        singleMenuRef.innerHTML += `<div id="name${i}">
-                                        <div id="menu${i}" class="menu">
+        singleMenuRef.innerHTML += `<div class="name">
+                                        <div class="menu">
                                             <div class"info">
                                                 <h3>${info[j].name}</h3>
                                                 <p>${info[j].description}</p>
-                                                <p class="price">${info[j].price.toFixed(2)}€</p>
+                                                <p class="price">${info[j].price.toFixed(2).replace('.', ',')}€</p>
                                             </div>
-                                            <div id="plus${i}" class="add">
+                                            <div id="plus" class="add">
                                                 <p>+</p>
                                             </div>
                                         </div>
                                     </div>`
     }
-
 };
 
 // add to basket + button
