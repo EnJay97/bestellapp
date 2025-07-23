@@ -69,7 +69,7 @@ let offers = [
       "info": [
         {
           "name": "Not Hamburger",
-          "description": "Pflanzenpatty, veganer Scheibenkäse, Salat, Tomate, Gurke und veganer Mayo",
+          "description": "Gemüsepatty, veganer Scheibenkäse, Salat, Tomate, Gurke und veganer Mayo",
           "price": 9.50,
         },
         {
@@ -99,12 +99,12 @@ let offers = [
       "info": [
         {
           "name": "Spaghetti Pomodoro",
-          "description": "Spaghetti mit Tomatensauce und frischem Basilikum",
+          "description": "Spaghetti mit Tomatensauce, Tomatenstücken und frischem Basilikum",
           "price": 7.50,
         },
         {
           "name": "Spaghetti Bolognese",
-          "description": "Spaghetti mit veganer Bolognese aus Sojahack",
+          "description": "Spaghetti mit veganer Bolognese aus Linsen und fein gehackten Walnüssen",
           "price": 8.50,
         },
         {

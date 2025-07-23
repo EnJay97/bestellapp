@@ -30,7 +30,7 @@ function renderOffers(){
     let offersRef = document.getElementById(`left`);
 
     for (let i = 0; i < offers.length; i++) {
-        offersRef.innerHTML += `<h2>${offers[i].type}</h2>`
+        offersRef.innerHTML += `<h2 id="${offers[i].type}">${offers[i].type}</h2>`
         renderSingleMenu(i);                            
     }
 };
