@@ -12,9 +12,8 @@ function init(){
 function renderContent(){
     let contentRef = document.getElementById("renderContent");
     contentRef.innerHTML = "";
-    contentRef.innerHTML += `<h2>${offers[i].type}</h2>
-                                <div class="left">
-                                    <div id="menu${i}" class="menu"></div>
+    contentRef.innerHTML += `   <div id="left${i}" class="left">
+                                      
                                 </div>
                                 <div class="right">
                                     <div class="shopping_cart">
@@ -25,22 +24,22 @@ function renderContent(){
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                `
+                                </div>`
 };
 function renderOffers(){
-    let offersRef = document.getElementById(`menu${i}`);
-    offersRef.innerHTML = "";
+    let offersRef = document.getElementById(`left${i}`);
 
     for (let i = 0; i < offers.length; i++) {
-        offersRef.innerHTML += `
-                                <div id="name${i}">
-                                    <h3>Name</h3>
-                                    <p>description</p>
-                                    <p class="price">price</p> 
-                                </div>
-                                <div id="plus${i}" class="add">
-                                    <p>+</p>
+        offersRef.innerHTML += `<h2>${offers[i].type}</h2>
+                                <div id="menu${i}" class="menu">
+                                    <div id="name${i}">
+                                        <h3>name</h3>
+                                        <p>description</p>
+                                        <p class="price">price€</p>
+                                    </div>
+                                    <div id="plus${i}" class="add">
+                                        <p>+</p>
+                                    </div>
                                 </div>`
 }
 };
