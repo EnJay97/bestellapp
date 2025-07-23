@@ -7,8 +7,6 @@ function init(){
     renderOffers();
 }
 
-// offers anzeigen
-
 function renderContent(){
     let contentRef = document.getElementById("renderContent");
     contentRef.innerHTML = "";
@@ -47,7 +45,7 @@ function renderSingleMenu(i){
                                                 <p>${info[j].description}</p>
                                                 <p class="price">${info[j].price.toFixed(2).replace('.', ',')}€</p>
                                             </div>
-                                            <div id="plus" class="add">
+                                            <div id="plus" class="add" onclick="addToBasket(${i}, ${j})">
                                                 <p>+</p>
                                             </div>
                                         </div>
@@ -55,6 +53,11 @@ function renderSingleMenu(i){
     }
 };
 
-// add to basket + button
+// add to basket
+
+function addToBasket(i, j) {
+
+};
+
 // calculate price
 //  
