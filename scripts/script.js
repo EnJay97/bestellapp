@@ -1,5 +1,6 @@
 
 let i = 0;
+let info = offers[i].info;
 
 function init(){
     //getFromLocalStorage();
@@ -15,9 +16,8 @@ function renderContent(){
                             <div class="right">
                                 <div class="shopping_cart">
                                     <h3>Dein Warenkorb</h3>
-                                        <div class="basket_content">
-                                            <p>Name</p>
-                                            <p>price</p>
+                                        <div id ="basket" class="basket_content">
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -25,7 +25,7 @@ function renderContent(){
 };
 
 function renderOffers(){
-    let offersRef = document.getElementById(`left`);
+    let offersRef = document.getElementById("left");
 
     for (let i = 0; i < offers.length; i++) {
         offersRef.innerHTML += `<h2 id="${offers[i].type}">${offers[i].type}</h2>`
@@ -34,8 +34,7 @@ function renderOffers(){
 };
 
 function renderSingleMenu(i){
-    let singleMenuRef = document.getElementById(`left`);
-    let info = offers[i].info;
+    let singleMenuRef = document.getElementById("left");
 
     for (let j = 0; j < info.length; j++) {
         singleMenuRef.innerHTML += `<div class="name">
@@ -56,7 +55,11 @@ function renderSingleMenu(i){
 // add to basket
 
 function addToBasket(i, j) {
-
+    let basketRef = document.getElementById("basket");
+    basketRef.innerHTML = "";
+    basketRef.innerHTML += `<p>${info[j].name}</p>
+                            <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
+                            `
 };
 
 // calculate price
