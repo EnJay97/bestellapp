@@ -60,14 +60,17 @@ function addToBasket(i, j) {
                                 <p>${info[j].name}</p>
                                 <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
                             </div>`
+    calculatePrice(j)
 };
 
 // calculate price
 
-function calculatePrice(){
+function calculatePrice(j){
+    let info = offers[i].info;
     let sum = 0;
     let sumRef = document.getElementById("sum")
 
-    sumRef.innerHTML = `<p>€</p>`
+    sum = info[j].price + info[j].price;
+    sumRef.innerHTML =`<p>€</p>`
 }
 //  
