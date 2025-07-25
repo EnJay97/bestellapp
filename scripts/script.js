@@ -1,6 +1,5 @@
 
 let i = 0;
-let info = offers[i].info;
 
 function init(){
     //getFromLocalStorage();
@@ -11,14 +10,13 @@ function init(){
 function renderContent(){
     let contentRef = document.getElementById("renderContent");
     contentRef.innerHTML = "";
-    contentRef.innerHTML += `<div id="left" class="left">
-                            </div>
+    contentRef.innerHTML += `<div id="left" class="left"></div>
                             <div class="right">
                                 <div class="shopping_cart">
                                     <h3>Dein Warenkorb</h3>
-                                        <div id ="basket" class="basket_content">
-                                            
-                                        </div>
+                                    <div id ="basket"></div>
+                                    <div id ="sum" class="sum">
+                                        <p>€</p>
                                     </div>
                                 </div>
                             </div>`
@@ -35,6 +33,7 @@ function renderOffers(){
 
 function renderSingleMenu(i){
     let singleMenuRef = document.getElementById("left");
+    let info = offers[i].info;
 
     for (let j = 0; j < info.length; j++) {
         singleMenuRef.innerHTML += `<div class="name">
@@ -55,12 +54,20 @@ function renderSingleMenu(i){
 // add to basket
 
 function addToBasket(i, j) {
+    let info = offers[i].info;
     let basketRef = document.getElementById("basket");
-    basketRef.innerHTML = "";
-    basketRef.innerHTML += `<p>${info[j].name}</p>
-                            <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
-                            `
+    basketRef.innerHTML += `<div class="basket_content">
+                                <p>${info[j].name}</p>
+                                <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
+                            </div>`
 };
 
 // calculate price
+
+function calculatePrice(){
+    let sum = 0;
+    let sumRef = document.getElementById("sum")
+
+    sumRef.innerHTML = `<p>€</p>`
+}
 //  

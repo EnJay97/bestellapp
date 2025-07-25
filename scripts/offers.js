@@ -108,7 +108,7 @@ let offers = [
           "price": 8.50,
         },
         {
-          "name": "Linguuine Pesto",
+          "name": "Linguine Pesto",
           "description": "Linguine mit hausgemachtem veganem Basilikumpesto und gerösteten Pinienkernen",
           "price": 8.20,
         },
@@ -179,7 +179,7 @@ let offers = [
         },
         {
           "name": "Mineralwasser",
-          "description": "Still oder Medium",
+          "description": "Medium",
           "price": 2.00,
         },
         {

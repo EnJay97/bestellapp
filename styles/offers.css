@@ -63,6 +63,7 @@
 .basket_content{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .menu{
@@ -87,6 +88,13 @@
 .add p{
     color: #d56700c0;
     font-weight: bold;
+}
+
+.sum{
+    display: flex;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
 }
 
 .menu h3, .menu p{
