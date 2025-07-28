@@ -81,7 +81,7 @@ function plus(id, price) {
         amount++;
         amountRef.innerText = amount;
     // Hier kannst du auch den Gesamtpreis neu berechnen lassen
-}
+    }
 };
 
 function minus(id, price) {
@@ -90,5 +90,5 @@ function minus(id, price) {
     if(amount>1){
     amount--;
     amountRef.innerText = amount;
-}
+    }
 };
