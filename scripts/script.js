@@ -44,33 +44,51 @@ function renderSingleMenu(i){
                                                 <p class="price">${info[j].price.toFixed(2).replace('.', ',')}€</p>
                                             </div>
                                             <div id="plus" class="add" onclick="addToBasket(${i}, ${j})">
-                                                <p>+</p>
+                                                <p class"orange">+</p>
                                             </div>
                                         </div>
                                     </div>`
     }
 };
 
-// add to basket
-
 function addToBasket(i, j) {
     let info = offers[i].info;
     let basketRef = document.getElementById("basket");
-    basketRef.innerHTML += `<div class="basket_content">
-                                <p>${info[j].name}</p>
-                                <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
-                            </div>`
-    calculatePrice(j)
+    let uniqueId = `amount${i}${j}`;
+    
+    basketRef.innerHTML += `
+        <div class="basket_content">
+            <h4>${info[j].name}</h4>   
+        </div>
+        <div class="calculate_and_amount">
+            <p class="orange" onclick="minus('${uniqueId}')">-</p>
+            <p id="${uniqueId}" class="gray">1</p>
+            <p class="orange" onclick="plus('${uniqueId}', ${info[j].price})">+</p>
+            <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
+        </div>`;
 };
 
 // calculate price
 
-function calculatePrice(j){
-    let info = offers[i].info;
-    let sum = 0;
-    let sumRef = document.getElementById("sum")
+function calculatePrice(){
 
-    sum = info[j].price + info[j].price;
-    sumRef.innerHTML =`<p>€</p>`
+};
+
+function plus(id, price) {
+    let amountRef = document.getElementById(id);
+    let amount = parseInt(amountRef.innerText);
+    if(amount<10){
+        amount++;
+        amountRef.innerText = amount;
+    // Hier kannst du auch den Gesamtpreis neu berechnen lassen
 }
-//  
+};
+
+function minus(id, price) {
+    let amountRef = document.getElementById(id);
+    let amount = parseInt(amountRef.innerText);
+    if(amount>1){
+    amount--;
+    amountRef.innerText = amount;
+}
+};

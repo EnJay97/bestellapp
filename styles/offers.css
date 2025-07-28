@@ -83,11 +83,18 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-
-.add p{
     color: #d56700c0;
     font-weight: bold;
+}
+
+p.orange{
+    color: #d56700c0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+p.gray{
+    color: rgb(88, 88, 88);
 }
 
 .sum{
@@ -97,8 +104,17 @@
     right: 2px;
 }
 
+.calculate_and_amount{
+    display: flex;
+    justify-content: space-around;
+}
+
 .menu h3, .menu p{
     margin: 2px;
+}
+
+h4{
+    margin: 8px;
 }
 
 .price{
