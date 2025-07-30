@@ -66,6 +66,10 @@
     flex-wrap: wrap;
 }
 
+.basket_content img{
+    margin-right: 8px;
+}
+
 .menu{
     background-color: #f7f7f7;
     display: flex;
