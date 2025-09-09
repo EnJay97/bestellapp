@@ -4,8 +4,20 @@ let cart = [];
 function init() {
     renderContent();
     renderOffers();
-    //getFromLocalStorage();
+    getFromLocalStorage();
 }
+
+function getFromLocalStorage(){
+    let cartString = localStorage.getItem("cart")
+    if (cartString !== null) {
+        cart = JSON.parse(cartString);
+    }
+    renderBasket();
+};
+
+function saveToLocalStorage(cart){
+    localStorage.setItem("cart", JSON.stringify(cart)); 
+};
 
 function renderContent() {
     let contentRef = document.getElementById("renderContent");
@@ -67,6 +79,7 @@ function addToBasket(i, j) {
         });
     }
 
+    saveToLocalStorage(cart);
     renderBasket();
 }
 
@@ -99,6 +112,7 @@ function renderBasket() {
 
 function deleteItem(id) {
     cart = cart.filter(item => item.id !== id);
+    saveToLocalStorage(cart);
     renderBasket();
 }
 
@@ -106,6 +120,7 @@ function plus(id) {
     let item = cart.find(item => item.id === id);
     if (item && item.quantity < 10) {
         item.quantity++;
+        saveToLocalStorage(cart);
         renderBasket();
     }
 }
@@ -114,6 +129,7 @@ function minus(id) {
     let item = cart.find(item => item.id === id);
     if (item && item.quantity > 1) {
         item.quantity--;
+        saveToLocalStorage(cart);
         renderBasket();
     }
 }

@@ -1,4 +1,4 @@
-const offers = [
+let offers = [
     {
       "type": "Salat",
       "info": [  
