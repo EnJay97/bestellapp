@@ -1,115 +1,118 @@
 
-let itemArray = [];
+let cart = [];
 
 function init() {
-    //getFromLocalStorage();
     renderContent();
     renderOffers();
 }
 
 function renderContent() {
     let contentRef = document.getElementById("renderContent");
-    contentRef.innerHTML = "";
-    contentRef.innerHTML += `<div id="left" class="left"></div>
-                            <div class="right">
-                                <div class="shopping_cart">
-                                    <h3>Dein Warenkorb</h3>
-                                    <div id ="basket"></div>
-                                    <div id ="sum" class="sum">
-                                        <p>€</p>
-                                    </div>
-                                </div>
-                            </div>`
-};
+    contentRef.innerHTML = `
+        <div id="left" class="left"></div>
+        <div class="right">
+            <div class="shopping_cart">
+                <h3>Dein Warenkorb</h3>
+                <div id="basket" class="scrollbar"></div>
+                <div id="sum" class="sum">0,00€</div>
+            </div>
+        </div>
+    `;
+}
 
 function renderOffers() {
     let offersRef = document.getElementById("left");
 
     for (let i = 0; i < offers.length; i++) {
-        offersRef.innerHTML += `<h2 id="${offers[i].type}">${offers[i].type}</h2>`
-        renderSingleMenu(i);                            
+        offersRef.innerHTML += `<h2 id="${offers[i].type}">${offers[i].type}</h2>`;
+        renderSingleMenu(i);
     }
-};
+}
 
 function renderSingleMenu(i) {
     let singleMenuRef = document.getElementById("left");
     let info = offers[i].info;
 
     for (let j = 0; j < info.length; j++) {
-        singleMenuRef.innerHTML += `<div class="name">
-                                        <div class="menu">
-                                            <div class"info">
-                                                <h3>${info[j].name}</h3>
-                                                <p>${info[j].description}</p>
-                                                <p class="price">${info[j].price.toFixed(2).replace('.', ',')}€</p>
-                                            </div>
-                                            <div id="plus" class="add" onclick="addToBasket(${i}, ${j})">
-                                                <p class"orange">+</p>
-                                            </div>
-                                        </div>
-                                    </div>`
+        singleMenuRef.innerHTML += `
+            <div class="name">
+                <div class="menu">
+                    <div class="info">
+                        <h3>${info[j].name}</h3>
+                        <p>${info[j].description}</p>
+                        <p class="price">${info[j].price.toFixed(2).replace('.', ',')}€</p>
+                    </div>
+                    <div class="add">
+                        <p class="orange" onclick="addToBasket(${i}, ${j})">+</p>
+                    </div>
+                </div>
+            </div>
+        `;
     }
-};
+}
 
 function addToBasket(i, j) {
-    let info = offers[i].info;
-    let basketRef = document.getElementById("basket");
-    let amountId = `amount${i}${j}`;
-    let amountElement = document.getElementById(amountId);
-    let itemId = `item${i}${j}`;
-    let priceId = `price${i}${j}`;
+    let infoItem = offers[i].info[j];
+    let existingItem = cart.find(item => item.id === `item${i}${j}`);
 
-    if (!amountElement) {
-        basketRef.innerHTML += `
-        <div class="basket_item" id="${itemId}">
-            <div class="basket_content">
-                <h4>${info[j].name}</h4>
-                <img src="img/icons/trash.svg" alt="delete Item" onclick="deleteItem('${itemId}')"> 
-            </div>
-            <div class="calculate_and_amount">
-                <p id="minus" class="orange" onclick="minus('${amountId}')">-</p>
-                <p id="${amountId}" class="gray">1</p>
-                <p class="orange" onclick="plus('${amountId}', ${info[j].price})">+</p>
-                <p id="${priceId}" >${info[j].price.toFixed(2).replace('.', ',')}€</p>
-            </div>
-        </div>`;
+    if (existingItem) {
+        existingItem.quantity++;
     } else {
-        amountElement.textContent++;
+        cart.push({
+            id: `item${i}${j}`,
+            name: infoItem.name,
+            price: infoItem.price,
+            quantity: 1
+        });
     }
+
+    renderBasket();
 }
 
-// calculate price
+function renderBasket() {
+    let basketRef = document.getElementById("basket");
+    basketRef.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+        basketRef.innerHTML += `
+            <div class="basket_item" id="${item.id}">
+                <div class="basket_content">
+                    <h4>${item.name}</h4>
+                    <img src="img/icons/trash.svg" alt="delete" onclick="deleteItem('${item.id}')">
+                </div>
+                <div class="calculate_and_amount">
+                    <p class="orange" onclick="minus('${item.id}')">-</p>
+                    <p class="gray">${item.quantity}</p>
+                    <p class="orange" onclick="plus('${item.id}')">+</p>
+                    <p>${(item.price * item.quantity).toFixed(2).replace('.', ',')}€</p>
+                </div>
+            </div>
+        `;
+        total += item.price * item.quantity;
+    });
+
+    document.getElementById("sum").innerHTML = `${total.toFixed(2).replace('.', ',')}€`;
+}
 
 function deleteItem(id) {
-    let element = document.getElementById(id);
-    if (element) {
-        element.remove();
-    }
-};
-
-function updateTotal() {
-    let total = 0;
-    
-
+    cart = cart.filter(item => item.id !== id);
+    renderBasket();
 }
 
-function plus(id, price) {
-    let amountRef = document.getElementById(id);
-    let amount = parseInt(amountRef.innerText);
-    if(amount<10){
-        amount++;
-        amountRef.innerText = amount;
-    // Hier kannst du auch den Gesamtpreis neu berechnen lassen
+function plus(id) {
+    let item = cart.find(item => item.id === id);
+    if (item && item.quantity < 10) {
+        item.quantity++;
+        renderBasket();
     }
+}
 
-    //updateTotal();
-};
-
-function minus(id, price) {
-    let amountRef = document.getElementById(id);
-    let amount = parseInt(amountRef.innerText);
-    if(amount>1){
-    amount--;
-    amountRef.innerText = amount;
+function minus(id) {
+    let item = cart.find(item => item.id === id);
+    if (item && item.quantity > 1) {
+        item.quantity--;
+        renderBasket();
     }
-};
+}

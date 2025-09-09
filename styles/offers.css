@@ -46,18 +46,33 @@
 }
 
 .shopping_cart h3, .shopping_cart p{
-    margin: 2px;
+    margin: 6px;
 }
 
 .shopping_cart{
     width: 290px;
     margin-right: 8px;
     background-color: #f7f7f7;
-    height: 97vh;
+    height: 70vh;
     border: 1px solid black;
     box-shadow: -1px 0px 10px 0px black;
     position: sticky;
     top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.scrollbar{
+    overflow-y: scroll;
+    scrollbar-color: #d56700c0 #FDDAB5;
+    scrollbar-width: thin;
+    height: 58vh;
+    width: 97%;
+}
+
+#basket{
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .basket_content{
@@ -102,10 +117,9 @@ p.gray{
 }
 
 .sum{
-    display: flex;
     position: absolute;
-    bottom: 2px;
-    right: 2px;
+    bottom: 6px;
+    right: 6px;
 }
 
 .calculate_and_amount{
@@ -129,3 +143,4 @@ h4{
 p{
     font-size: 18px;
 }
+
