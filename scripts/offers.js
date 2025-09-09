@@ -179,13 +179,23 @@ const offers = [
         },
         {
           "name": "Mineralwasser",
+          "description": "Still",
+          "price": 2.00,
+        },
+        {
+          "name": "Mineralwasser",
           "description": "Medium",
           "price": 2.00,
         },
         {
+          "name": "Apfelsaft",
+          "description": "Naturtrüb, regional",
+          "price": 2.60,
+        },
+        {
           "name": "Apfelschorle",
           "description": "Erfrischende Mischung aus Apfelsaft und Mineralwasser",
-          "price": 2.60,
+          "price": 2.40,
         }
       ]
     }   

@@ -22,7 +22,7 @@ body {
 
 header, footer{
     background-color: #d56700c0;
-    height: 10vh;
+    height: 12vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,13 +38,23 @@ main{
 footer a{
     display: flex;
     justify-content: center;
-    padding-top: 4px;
     text-decoration: none;
     color: #f7f7f7;
 }
 
+.footer{
+    margin: 0;
+    display: flex;
+}
+
+footer p{
+    display: flex;
+    margin: 0;
+    padding: 0 4px;
+}
+
 footer{
-    margin-top: 16px;
+    display: flex;
     flex-direction: column;
 }
 

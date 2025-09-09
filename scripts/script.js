@@ -4,6 +4,7 @@ let cart = [];
 function init() {
     renderContent();
     renderOffers();
+    //getFromLocalStorage();
 }
 
 function renderContent() {
