@@ -1,13 +1,13 @@
 
 let itemArray = [];
 
-function init(){
+function init() {
     //getFromLocalStorage();
     renderContent();
     renderOffers();
 }
 
-function renderContent(){
+function renderContent() {
     let contentRef = document.getElementById("renderContent");
     contentRef.innerHTML = "";
     contentRef.innerHTML += `<div id="left" class="left"></div>
@@ -22,7 +22,7 @@ function renderContent(){
                             </div>`
 };
 
-function renderOffers(){
+function renderOffers() {
     let offersRef = document.getElementById("left");
 
     for (let i = 0; i < offers.length; i++) {
@@ -31,7 +31,7 @@ function renderOffers(){
     }
 };
 
-function renderSingleMenu(i){
+function renderSingleMenu(i) {
     let singleMenuRef = document.getElementById("left");
     let info = offers[i].info;
 
@@ -56,7 +56,8 @@ function addToBasket(i, j) {
     let basketRef = document.getElementById("basket");
     let amountId = `amount${i}${j}`;
     let amountElement = document.getElementById(amountId);
-    let itemId = `item${i}${j}`; // eindeutige ID fürs Löschen
+    let itemId = `item${i}${j}`;
+    let priceId = `price${i}${j}`;
 
     if (!amountElement) {
         basketRef.innerHTML += `
@@ -69,7 +70,7 @@ function addToBasket(i, j) {
                 <p id="minus" class="orange" onclick="minus('${amountId}')">-</p>
                 <p id="${amountId}" class="gray">1</p>
                 <p class="orange" onclick="plus('${amountId}', ${info[j].price})">+</p>
-                <p>${info[j].price.toFixed(2).replace('.', ',')}€</p>
+                <p id="${priceId}" >${info[j].price.toFixed(2).replace('.', ',')}€</p>
             </div>
         </div>`;
     } else {
@@ -79,12 +80,18 @@ function addToBasket(i, j) {
 
 // calculate price
 
-function deleteItem(id){
+function deleteItem(id) {
     let element = document.getElementById(id);
     if (element) {
         element.remove();
     }
 };
+
+function updateTotal() {
+    let total = 0;
+    
+
+}
 
 function plus(id, price) {
     let amountRef = document.getElementById(id);
@@ -94,6 +101,8 @@ function plus(id, price) {
         amountRef.innerText = amount;
     // Hier kannst du auch den Gesamtpreis neu berechnen lassen
     }
+
+    //updateTotal();
 };
 
 function minus(id, price) {
