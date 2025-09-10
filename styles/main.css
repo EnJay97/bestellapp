@@ -28,6 +28,13 @@ header, footer{
     align-items: center;
 }
 
+header img{
+    width: 120px;
+    height: 48px;
+    position: absolute;
+    left: 8px;
+}
+
 main{
     max-width: 1440px;
     margin: 0 auto;
