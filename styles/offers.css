@@ -72,6 +72,12 @@
     width: 97%;
 }
 
+.order_button button{
+    background-color: #FDDAB5;
+    border: none;
+    border-radius: 8px;
+}
+
 #basket{
     overflow-y: auto;
     overflow-x: hidden;

@@ -27,7 +27,12 @@ function renderContent() {
             <div class="shopping_cart">
                 <h3>Dein Warenkorb</h3>
                 <div id="basket" class="scrollbar"></div>
-                <div id="sum" class="sum">0,00€</div>
+                <div class="order_button">
+                    <button>Bestellen</button>
+                </div>
+                <div id="sum" class="sum">
+                    <p>0,00€</p>
+                </div>
             </div>
         </div>
     `;
@@ -107,7 +112,7 @@ function renderBasket() {
         total += item.price * item.quantity;
     });
 
-    document.getElementById("sum").innerHTML = `${total.toFixed(2).replace('.', ',')}€`;
+    document.getElementById("sum").innerText = `${total.toFixed(2).replace('.', ',')}€`;
 }
 
 function deleteItem(id) {
