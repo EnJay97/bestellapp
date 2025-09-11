@@ -35,13 +35,42 @@ header img{
     left: 8px;
 }
 
-.round_img
+.atf{
+    position: relative;
+}
+
+.round_img{
+    border-radius: 50%;
+    border: solid 2px white;
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    z-index: 10;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%);
+    object-fit: cover;
+}
 
 main{
     max-width: 1440px;
     margin: 0 auto;
     min-height: calc(100vh - 20vh);
-    color: black;
+    color: black; 
+}
+
+main h1{
+    padding: 8px;
+    margin: 0;
+}
+
+.name_rating{
+    border-bottom: solid 2px white;
+}
+
+.rating{
+    margin: 0;
+    padding: 8px;
 }
 
 footer a{
