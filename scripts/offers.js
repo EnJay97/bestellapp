@@ -178,13 +178,13 @@ let offers = [
           "price": 2.70,
         },
         {
-          "name": "Mineralwasser",
-          "description": "Still",
+          "name": "Mineralwasser still",
+          "description": "regional aus Sachsen-Anhalt",
           "price": 2.00,
         },
         {
-          "name": "Mineralwasser",
-          "description": "Medium",
+          "name": "Mineralwasser medium",
+          "description": "regional aus Sachsen-Anhalt",
           "price": 2.00,
         },
         {
