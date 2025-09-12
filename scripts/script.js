@@ -28,7 +28,7 @@ function renderContent() {
                 <h3>Dein Warenkorb</h3>
                 <div id="basket" class="scrollbar"></div>
                 <div class="order_button">
-                    <button>Bestellen</button>
+                    <button id="order_button" onclick="placeOrder()">Bestellen</button>
                 </div>
                 <div id="sum" class="sum">
                     <p>0,00€</p>
@@ -137,4 +137,17 @@ function minus(id) {
         saveToLocalStorage(cart);
         renderBasket();
     }
+}
+
+function placeOrder(){
+    cart = [];
+    let basketRef = document.getElementById("basket");
+    basketRef.innerHTML = "";
+    let sumRef = document.getElementById("sum");
+    sumRef.innerText = "0,00€"
+    saveToLocalStorage(cart);
+}
+
+function openOverlay(){
+    
 }
