@@ -1,0 +1,25 @@
+
+#overlay{
+    width: 90vw;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    position: fixed;
+    z-index: 11;
+    justify-self: anchor-center;
+    align-self: anchor-center;
+}
+
+#overlay_basket{
+    width: 75vw;
+    height: 75vh;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    position: fixed;
+    justify-self: anchor-center;
+    align-self: anchor-center;
+}
+
+.d_none{
+    display: none;
+}

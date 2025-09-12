@@ -146,8 +146,15 @@ function placeOrder(){
     let sumRef = document.getElementById("sum");
     sumRef.innerText = "0,00€"
     saveToLocalStorage(cart);
+    openOverlay()
 }
 
-function openOverlay(){
-    
+function openOverlay() {
+    let overlayRef = document.getElementById("overlay");
+    overlayRef.classList.remove("d_none");
+}
+
+function closeOverlay() {
+    let overlayRef = document.getElementById("overlay");
+    overlayRef.classList.add("d_none");
 }

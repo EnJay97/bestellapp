@@ -10,6 +10,7 @@
     <link rel="icon" href="./img/icons/Favicon/favicon.ico">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/offers.css">
+    <link rel="stylesheet" href="styles/overlay.css">
 
 </head>
 <body onload="init()">
@@ -20,12 +21,21 @@
     </header>
 
     <main>
+
+        <div id="overlay" class="d_none">
+            <span id="close">
+                <button onclick="closeOverlay()">&times</button>
+            </span>
+            <div id="overlay_basket"></div>
+        </div>
+
         <div class="atf">
             <div class="top_img">
                 <img src="./img/images/aot-image-fastfood.jpg" alt="Bild mit Pommes und Burger" class="top_img">
                 <img src="./img/images/baby-monkey-4685581_640.jpg" alt="Profilbild" class="round_img">
             </div>
         </div>
+
         <div class="name_rating">
             <h1>Your vegan Foodstore</h1>
             <p class="rating">Bewertung: (Hier irgendwie einfügen)</p>
@@ -42,7 +52,8 @@
 
         <div id="renderContent" class="content">
             <!---->
-            
+        
+    </div> 
             
     </main>
 
