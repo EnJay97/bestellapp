@@ -28,7 +28,7 @@ function renderContent() {
                 <h3>Dein Warenkorb</h3>
                 <div id="basket" class="scrollbar"></div>
                 <div class="order_button">
-                    <button id="order_button" onclick="placeOrder()">Bestellen</button>
+                    <button id="order_button" onclick="placeOrder()" disabled>Bestellen</button>
                 </div>
                 <div id="sum" class="sum">
                     <p>0,00€</p>
@@ -85,6 +85,7 @@ function addToBasket(i, j) {
     }
 
     saveToLocalStorage(cart);
+    enableOrderButton();
     renderBasket();
 }
 
@@ -118,6 +119,7 @@ function renderBasket() {
 function deleteItem(id) {
     cart = cart.filter(item => item.id !== id);
     saveToLocalStorage(cart);
+    enableOrderButton();
     renderBasket();
 }
 
@@ -126,6 +128,7 @@ function plus(id) {
     if (item && item.quantity < 10) {
         item.quantity++;
         saveToLocalStorage(cart);
+        enableOrderButton();
         renderBasket();
     }
 }
@@ -135,6 +138,7 @@ function minus(id) {
     if (item && item.quantity > 1) {
         item.quantity--;
         saveToLocalStorage(cart);
+        enableOrderButton();
         renderBasket();
     }
 }
@@ -149,6 +153,16 @@ function placeOrder(){
     openOverlay()
 }
 
+function enableOrderButton(){
+    const orderButton = document.getElementById("order_button");
+    if(cart.length === 0) {
+        orderButton.disabled = true;
+    } else{
+        orderButton.disabled = false;
+        orderButton.classList.remove("disabled");
+    }
+}
+
 function openOverlay() {
     let overlayRef = document.getElementById("overlay");
     overlayRef.classList.remove("d_none");
@@ -157,4 +171,6 @@ function openOverlay() {
 function closeOverlay() {
     let overlayRef = document.getElementById("overlay");
     overlayRef.classList.add("d_none");
+    enableOrderButton();
 }
+

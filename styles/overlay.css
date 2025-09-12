@@ -1,7 +1,7 @@
 
 #overlay{
-    width: 90vw;
-    height: 90vh;
+    width: 40vw;
+    height: 30vh;
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     position: fixed;
@@ -10,16 +10,28 @@
     align-self: anchor-center;
 }
 
-#overlay_basket{
-    width: 75vw;
-    height: 75vh;
+#inner_overlay{
+    width: 35vw;
+    height: 25vh;
     background-color: #f7f7f7;
     border-radius: 8px;
     position: fixed;
     justify-self: anchor-center;
     align-self: anchor-center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#inner_overlay button{
+    font-size: 20px;
 }
 
 .d_none{
     display: none;
+}
+
+#inner_overlay h3{
+    text-align: center;
 }

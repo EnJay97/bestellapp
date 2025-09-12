@@ -91,6 +91,12 @@
     color: #f7f7f7;
 }
 
+.order_button button:hover:disabled{
+    background-color: #FDDAB5;
+    border: solid 1px #FDDAB5;
+    color: #BEA489;
+}
+
 #basket{
     overflow-y: auto;
     overflow-x: hidden;
