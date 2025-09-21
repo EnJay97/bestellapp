@@ -174,10 +174,8 @@ function closeOverlay() {
     enableOrderButton();
 }
 
-const burger = document.querySelector('.burger');
-const nav = document.querySelector('.toggle_menu');
-
-burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
-    nav.classList.toggle('active')
-})
+function toggleNavbar(){
+    let navbarRef = document.getElementById("toggle_menu");
+    navbarRef.classList.toggle("d_none")
+    navbarRef.classList.toggle("toggle_menu")
+}

@@ -23,7 +23,7 @@
 
     <main>
 
-        <div id="overlay" class="d">
+        <div id="overlay" class="d_none">
             <div id="inner_overlay">
                 <h3>Deine Bestellung ist eingegangen!</h3>
                 <span id="close">
@@ -54,20 +54,17 @@
         </nav>
 
         <nav class="responsive_navbar">
-            <div id="burger" class="burger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <div class="line"></div>
-                <div class="toggle_menu">
-                    <a href="#Salat">Salat</a>
-                    <a href="#Pizza">Pizza</a>
-                    <a href="#Pasta">Pasta</a>
-                    <a href="#Burger">Burger</a>
-                    <a href="#Dessert">Dessert</a>
-                    <a href="#Getränke">Getränke</a>
-                </div>
+            <img class="burger" src="./img/icons/burger_icon.png" alt="menü" onclick="toggleNavbar()">
+            <div id="toggle_menu" class="d_none">
+                <a href="#Salat">Salat</a>
+                <a href="#Pizza">Pizza</a>
+                <a href="#Pasta">Pasta</a>
+                <a href="#Burger">Burger</a>
+                <a href="#Dessert">Dessert</a>
+                <a href="#Getränke">Getränke</a>
+            </div>
+                
         </nav>
 
         <div id="renderContent" class="content">

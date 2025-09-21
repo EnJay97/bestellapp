@@ -1,4 +1,19 @@
 
+.burger{
+    display: none;
+}
+
+.d_none{
+    display: none;
+}
+
+.toggle_menu{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 8px;
+    padding: 0 8px;
+}
+
 @media (max-width: 750px) {
 
 .name_rating{
@@ -26,40 +41,21 @@
 
 @media (max-width: 450px){
 
+.burger{
+    display: flex;
+    justify-self: center;
+    width: 20px;
+    height: 20px;
+}
+
+
+
 .navbar{
     display: none;
 }
 
-.burger{
-    width: 30px;
-    height: 22px;
-    margin: 4px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    justify-self: center;
-    cursor: pointer;
-}
-
-.burger div{
-    width: 100%;
-    height: 4px;
-    background-color: #333;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
 .line{
     border: solid 1px white;
-}
-
-.toggle_menu{
-    display: none;
-}
-
-.toggle_menu.active{
-    display: flex;
-    flex-direction: column;
 }
 
 ul{
