@@ -19,30 +19,16 @@ function saveToLocalStorage(cart){
     localStorage.setItem("cart", JSON.stringify(cart)); 
 };
 
-function renderContent() {
-    let contentRef = document.getElementById("renderContent");
-    contentRef.innerHTML = `
-        <div id="left" class="left"></div>
-        <div class="right">
-            <div class="shopping_cart">
-                <h3>Dein Warenkorb</h3>
-                <div id="basket" class="scrollbar"></div>
-                <div class="order_button">
-                    <button id="order_button" onclick="placeOrder()" disabled>Bestellen</button>
-                </div>
-                <div id="sum" class="sum">
-                    <p>0,00€</p>
-                </div>
-            </div>
-        </div>
-    `;
+function renderContent(){
+    let contentRef = document.getElementById("renderContent")
+    contentRef.innerHTML += contentTemplate();
 }
 
 function renderOffers() {
     let offersRef = document.getElementById("left");
 
     for (let i = 0; i < offers.length; i++) {
-        offersRef.innerHTML += `<h2 id="${offers[i].type}">${offers[i].type}</h2>`;
+        offersRef.innerHTML += offersTemplate(offers, i);
         renderSingleMenu(i);
     }
 }
@@ -52,20 +38,7 @@ function renderSingleMenu(i) {
     let info = offers[i].info;
 
     for (let j = 0; j < info.length; j++) {
-        singleMenuRef.innerHTML += `
-            <div class="name">
-                <div class="menu">
-                    <div class="info">
-                        <h3>${info[j].name}</h3>
-                        <p>${info[j].description}</p>
-                        <p class="price">${info[j].price.toFixed(2).replace('.', ',')}€</p>
-                    </div>
-                    <div class="add">
-                        <p class="orange" onclick="addToBasket(${i}, ${j})">+</p>
-                    </div>
-                </div>
-            </div>
-        `;
+        singleMenuRef.innerHTML += singleMenuTemplate(info[j], i, j);
     }
 }
 
@@ -96,20 +69,7 @@ function renderBasket() {
     let total = 0;
 
     cart.forEach(item => {
-        basketRef.innerHTML += `
-            <div class="basket_item" id="${item.id}">
-                <div class="basket_content">
-                    <h4>${item.name}</h4>
-                    <img src="img/icons/trash.svg" alt="delete" onclick="deleteItem('${item.id}')">
-                </div>
-                <div class="calculate_and_amount">
-                    <p class="orange" onclick="minus('${item.id}')">-</p>
-                    <p class="gray">${item.quantity}</p>
-                    <p class="orange" onclick="plus('${item.id}')">+</p>
-                    <p>${(item.price * item.quantity).toFixed(2).replace('.', ',')}€</p>
-                </div>
-            </div>
-        `;
+        basketRef.innerHTML += basketTemplate(item)
         total += item.price * item.quantity;
     });
 
