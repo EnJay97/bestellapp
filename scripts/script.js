@@ -116,18 +116,6 @@ function renderBasket() {
     document.getElementById("sum").innerText = `${total.toFixed(2).replace('.', ',')}€`;
 }
 
-/*function renderResponsiveBasket() {
-    let responsiveBasketRef = document.getElementById("responsive_basket");
-    responsiveBasketRef.innerHTML = "";
-    responsiveBasketRef.innerHTML = `
-        <button class="responsive_order_button">
-            <img class="basket_img" src="./img/icons/basket.png" alt="Warenkorb">
-            <p>Warenkorb ansehen</p>
-            <p id="price">€</p>
-        </button>
-    `; 
-}*/
-
 function deleteItem(id) {
     cart = cart.filter(item => item.id !== id);
     saveToLocalStorage(cart);

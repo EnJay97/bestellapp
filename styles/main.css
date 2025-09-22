@@ -56,6 +56,17 @@ header img{
     padding-left: 8px;
 }
 
+.rating{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checked {
+  color: rgb(255, 184, 52);
+}
+
 main{
     max-width: 1440px;
     margin: 0 auto;
@@ -64,6 +75,11 @@ main{
 }
 
 main h1{
+    padding: 8px;
+    margin: 0;
+}
+
+main h3{
     padding: 8px;
     margin: 0;
 }
