@@ -76,6 +76,14 @@ function renderBasket() {
     document.getElementById("sum").innerText = `${total.toFixed(2).replace('.', ',')}€`;
 }
 
+/*function renderResponsiveBasket() {
+
+}
+
+function responsiveBasketTemplate() {
+    return ``
+}*/
+
 function deleteItem(id) {
     cart = cart.filter(item => item.id !== id);
     saveToLocalStorage(cart);
