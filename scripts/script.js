@@ -147,3 +147,13 @@ function toggleNavbar(){
     navbarRef.classList.toggle("d_none")
     navbarRef.classList.toggle("toggle_menu")
 }
+
+function openBasket(){
+    let basketRef = document.getElementById("right_basket");
+    basketRef.classList.add("visible");
+}
+
+function closeBasket(){
+    let basketRef =document.getElementById("right_basket");
+    basketRef.classList.remove("visible");
+}

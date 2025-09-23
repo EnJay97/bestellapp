@@ -2,9 +2,10 @@
 function contentTemplate() {
     return `
         <div id="left" class="left"></div>
-        <div class="right">
+        <div id="right_basket" class="right" onclick="openBasket()">
             <div class="shopping_cart">
                 <h3>Dein Warenkorb</h3>
+                <button id="closeBasket" onclick="closeBasket()">&times</button>
                 <div id="basket" class="scrollbar"></div>
                 <div class="order_button">
                     <button id="order_button" onclick="placeOrder()" disabled>Bestellen</button>
