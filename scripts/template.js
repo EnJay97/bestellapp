@@ -2,7 +2,7 @@
 function contentTemplate() {
     return `
         <div id="left" class="left"></div>
-        <div id="right_basket" class="right" onclick="openBasket()">
+        <div id="right_basket" class="right" onclick="openBasket()" style="display : flex">
             <div class="shopping_cart">
                 <h3>Dein Warenkorb</h3>
                 <button id="closeBasket" onclick="closeBasket()">&times</button>

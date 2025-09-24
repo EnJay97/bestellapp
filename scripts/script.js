@@ -20,8 +20,7 @@ function saveToLocalStorage(cart){
 };
 
 function renderContent(){
-    let contentRef = document.getElementById("renderContent")
-    contentRef.innerHTML += contentTemplate();
+    document.getElementById("renderContent").innerHTML += contentTemplate();
 }
 
 function renderOffers() {
@@ -76,14 +75,6 @@ function renderBasket() {
     document.getElementById("sum").innerText = `${total.toFixed(2).replace('.', ',')}€`;
 }
 
-/*function renderResponsiveBasket() {
-
-}
-
-function responsiveBasketTemplate() {
-    return ``
-}*/
-
 function deleteItem(id) {
     cart = cart.filter(item => item.id !== id);
     saveToLocalStorage(cart);
@@ -113,10 +104,8 @@ function minus(id) {
 
 function placeOrder(){
     cart = [];
-    let basketRef = document.getElementById("basket");
-    basketRef.innerHTML = "";
-    let sumRef = document.getElementById("sum");
-    sumRef.innerText = "0,00€"
+    document.getElementById("basket").innerHTML = "";
+    document.getElementById("sum").innerText = "0,00€"
     saveToLocalStorage(cart);
     openOverlay()
 }
@@ -132,13 +121,11 @@ function enableOrderButton(){
 }
 
 function openOverlay() {
-    let overlayRef = document.getElementById("overlay");
-    overlayRef.classList.remove("d_none");
+    document.getElementById("overlay").classList.remove("d_none");
 }
 
 function closeOverlay() {
-    let overlayRef = document.getElementById("overlay");
-    overlayRef.classList.add("d_none");
+    document.getElementById("overlay").classList.add("d_none");
     enableOrderButton();
 }
 
@@ -148,12 +135,11 @@ function toggleNavbar(){
     navbarRef.classList.toggle("toggle_menu")
 }
 
-function openBasket(){
-    let basketRef = document.getElementById("right_basket");
-    basketRef.classList.add("visible");
+function closeBasket(){
+    document.getElementById("right_basket").classList.remove("visible"); // Versuch 1
+    document.getElementById("right_basket").style ='display : none'; // Versuch 2
 }
 
-function closeBasket(){
-    let basketRef =document.getElementById("right_basket");
-    basketRef.classList.remove("visible");
+function openBasket(){
+    document.getElementById("right_basket").classList.add("visible");
 }
