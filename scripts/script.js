@@ -136,9 +136,9 @@ function toggleNavbar(){
 }
 
 function closeBasket(){
-    document.getElementById("right_basket").style.display = 'none';
+    document.getElementById("right_basket").classList.remove("visible")
 }
 
 function openBasket(){
-    document.getElementById("right_basket").style.display = 'flex';
+    document.getElementById("right_basket").classList.add("visible")
 }

@@ -88,6 +88,10 @@ main h3{
     border-bottom: solid 2px white;
 }
 
+.name_rating h3{
+    padding-left: 8px;
+}
+
 footer a{
     display: flex;
     justify-content: center;
