@@ -107,6 +107,7 @@ function placeOrder(){
     document.getElementById("basket").innerHTML = "";
     document.getElementById("sum").innerText = "0,00€"
     saveToLocalStorage(cart);
+    enableOrderButton();
     openOverlay()
 }
 
@@ -126,7 +127,6 @@ function openOverlay() {
 
 function closeOverlay() {
     document.getElementById("overlay").classList.add("d_none");
-    enableOrderButton();
 }
 
 function toggleNavbar(){
@@ -136,10 +136,9 @@ function toggleNavbar(){
 }
 
 function closeBasket(){
-    document.getElementById("right_basket").classList.remove("visible"); // Versuch 1
-    document.getElementById("right_basket").style ='display : none'; // Versuch 2
+    document.getElementById("right_basket").style.display = 'none';
 }
 
 function openBasket(){
-    document.getElementById("right_basket").classList.add("visible");
+    document.getElementById("right_basket").style.display = 'flex';
 }

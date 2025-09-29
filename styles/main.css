@@ -57,9 +57,10 @@ header img{
 }
 
 .rating{
+    margin: 0;
+    padding: 4px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
 }
 
@@ -80,17 +81,11 @@ main h1{
 }
 
 main h3{
-    padding: 8px;
     margin: 0;
 }
 
 .name_rating{
     border-bottom: solid 2px white;
-}
-
-.rating{
-    margin: 0;
-    padding: 8px;
 }
 
 footer a{
