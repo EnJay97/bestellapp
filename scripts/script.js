@@ -72,7 +72,8 @@ function renderBasket() {
         total += item.price * item.quantity;
     });
 
-    document.getElementById("sum").innerText = `${total.toFixed(2).replace('.', ',')}€`;
+    document.getElementById("sum").innerText = `${total.toFixed(2).replace('.', ',')} €`;
+    document.getElementById("price").innerText = `${total.toFixed(2).replace('.', ',')} €`;
 }
 
 function deleteItem(id) {
@@ -105,7 +106,8 @@ function minus(id) {
 function placeOrder(){
     cart = [];
     document.getElementById("basket").innerHTML = "";
-    document.getElementById("sum").innerText = "0,00€"
+    document.getElementById("sum").innerText = "0,00 €"
+    document.getElementById("price").innerText = "0,00 €"
     saveToLocalStorage(cart);
     enableOrderButton();
     openOverlay()
