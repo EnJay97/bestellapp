@@ -83,9 +83,14 @@ function deleteItem(id) {
     renderBasket();
 }
 
+function clearAll() {;
+    cart.length = 0; 
+    renderBasket();
+}
+
 function plus(id) {
     let item = cart.find(item => item.id === id);
-    if (item && item.quantity < 10) {
+    if (item && item.quantity < 99) {
         item.quantity++;
         saveToLocalStorage(cart);
         enableOrderButton();
@@ -100,6 +105,9 @@ function minus(id) {
         saveToLocalStorage(cart);
         enableOrderButton();
         renderBasket();
+    }
+    else {
+        deleteItem(id);
     }
 }
 

@@ -6,6 +6,7 @@ function contentTemplate() {
                     <h3>Dein Warenkorb</h3>
                     <button id="closeBasket" onclick="closeBasket()">&times</button>
                     <div id="basket" class="scrollbar"></div>
+                    <div class="clear_all" onclick="clearAll()"><img src="img/icons/trash.svg" alt="delete" onclick="deleteItem()"></div>
                     <div class="order_button">
                         <button id="order_button" onclick="placeOrder()" disabled>Bestellen</button>
                     </div>
@@ -42,9 +43,11 @@ function basketTemplate(item){
                     <img src="img/icons/trash.svg" alt="delete" onclick="deleteItem('${item.id}')">
                 </div>
                 <div class="calculate_and_amount">
-                    <p class="orange" onclick="minus('${item.id}')">-</p>
-                    <p class="gray">${item.quantity}</p>
-                    <p class="orange" onclick="plus('${item.id}')">+</p>
+                    <div class="amount">
+                        <p class="orange" onclick="minus('${item.id}')">-</p>
+                        <p class="gray">${item.quantity}</p>
+                        <p class="orange" onclick="plus('${item.id}')">+</p>
+                    </div>
                     <p>${(item.price * item.quantity).toFixed(2).replace('.', ',')} €</p>
                 </div>
             </div>`

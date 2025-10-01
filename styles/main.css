@@ -26,6 +26,7 @@ header, footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 header img{
@@ -37,6 +38,7 @@ header img{
 
 .atf{
     position: relative;
+    width: 100%;
 }
 
 .round_img{
@@ -86,6 +88,7 @@ main h3{
 
 .name_rating{
     border-bottom: solid 2px white;
+    width: 100%;
 }
 
 .name_rating h3{

@@ -18,7 +18,7 @@
     display: none;
     width: 100%;
     height: 16vh;
-    background-color: #f7f7f7cf;
+    background-color: #f7f7f7;
     position: sticky;
     bottom: 0;
     align-items: center;
@@ -83,6 +83,17 @@
     margin: 0;
 }
 
+.clear_all{
+    margin: 8px;
+    padding-top: 6px;
+}
+
+.clear_all img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 @media (max-width: 750px) {
 
 .name_rating{
@@ -104,9 +115,15 @@
     justify-self: anchor-center;
     flex-grow: 1;
     position: fixed;
-    bottom: 92px;
+    bottom: 86px;
     z-index: 12;
-    margin: 0 8px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.scrollbar{
+    height: 37vh;
 }
 
 #closeBasket{
@@ -119,15 +136,16 @@
     cursor: pointer;
     align-self: flex-end;
     position: fixed;
-    margin: 14px;
+    margin: 5px;
     padding: 5px 8px;
 }
 
 .shopping_cart{
-    margin-right: 8px;
     background-color: #f7f7f7;
     height: 50vh;
     position: sticky;
+    width: 100%;
+    margin: 8px;
 }
 
 .navbar{
