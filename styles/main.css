@@ -20,25 +20,34 @@ body {
     font-family: "Sour_Gummy";
 }
 
+.icon_header{
+    width: 1440px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
 header, footer{
     background-color: #d56700c0;
-    height: 12vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
+
+
 header img{
     width: 120px;
     height: 48px;
-    position: absolute;
-    left: 8px;
 }
 
 .atf{
-    position: relative;
+    position: absolute;
     width: 100%;
+    top: 114px;
 }
 
 .round_img{
@@ -73,8 +82,10 @@ header img{
 main{
     max-width: 1440px;
     margin: 0 auto;
-    min-height: calc(100vh - 20vh);
-    color: black; 
+    color: black;
+    position: relative;
+    top: 200px;
+    margin-bottom: 220px;
 }
 
 main h1{
@@ -87,7 +98,6 @@ main h3{
 }
 
 .name_rating{
-    border-bottom: solid 2px white;
     width: 100%;
 }
 
